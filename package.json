@@ -8,7 +8,10 @@
   },
   "private": true,
   "scripts": {
-    "start": "babel-node app.js",
+    "clean": "rm -rf build && mkdir build",
+    "build-server": "babel -d ./build/api ./api -s",
+    "build": "npm run clean  && npm run build-server",
+    "start": "nodemon ./build/app.js",
     "lint": "standard --fix",
     "snyk-protect": "snyk protect",
     "prepare": "npm run snyk-protect"

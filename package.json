@@ -1,6 +1,10 @@
 {
   "name": "rest-swagger",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "a really cool app",
+  "engines": {
+    "node": "10.3.0"
+  },
   "private": true,
   "scripts": {
     "start": "babel-node app.js",

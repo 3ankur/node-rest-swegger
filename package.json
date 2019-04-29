@@ -3,15 +3,15 @@
   "version": "1.0.0",
   "description": "a really cool app",
   "engines": {
-    "node": "10.3.0"
+    "node": "10.3.0",
+    "npm": "6.x"
   },
   "private": true,
   "scripts": {
     "start": "babel-node app.js",
     "lint": "standard --fix",
     "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect",
-	  "heroku-prebuild": "export NPM_CONFIG_PRODUCTION=false; export NODE_ENV=; NPM_CONFIG_PRODUCTION=false NODE_ENV=development npm install --only=dev --dev"
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "body-parser": "~1.18.2",

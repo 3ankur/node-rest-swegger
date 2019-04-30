@@ -3,7 +3,9 @@ var logger = require('morgan')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
 
-const port = 3000
+//const port = 3000
+
+const port = process.env.PORT || 5001;
 
 var stocks = require('./api/controllers/stocks')
 var mappings = require('./api/controllers/mapping')

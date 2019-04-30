@@ -3,7 +3,9 @@ var logger = require('morgan')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
 
-const port = 7001
+//const port = 3000
+
+const port = process.env.PORT || 9001;
 
 var stocks = require('./api/controllers/stocks')
 var mappings = require('./api/controllers/mapping')
@@ -15,6 +17,23 @@ app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
+
+app.use((req,res,next)=>{
+  //console.log(req.headers)
+    // Website you wish to allow to connect
+    res.setHeader('Access-Control-Allow-Origin', '*');
+
+    // Request methods you wish to allow
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', '*');
+//X-Requested-With,Content-Type,authorization
+    // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+    res.setHeader('Access-Control-Allow-Credentials', false);
+    next();
+});
 
 app.use("/api/mapping",mappings);
 app.use('/api/stocks', stocks)

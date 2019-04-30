@@ -21,7 +21,7 @@ var options = {
       name: 'stocks1',
       description: 'Stocks API'
     }, _defineProperty(_ref, 'name', 'Mapping'), _defineProperty(_ref, 'description', 'Mapping API'), _ref)],
-    schemes: ['http'],
+    schemes: ["http", "https"],
     // host: 'localhost:3000',
     basePath: '/api'
   },

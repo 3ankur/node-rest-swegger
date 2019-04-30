@@ -1,4 +1,4 @@
-//import Model from '../models/stock-model'
+import Model from '../models/stock-model'
 
 
 

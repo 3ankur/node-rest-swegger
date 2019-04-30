@@ -19,7 +19,7 @@ const options = {
         description: 'Mapping API'
       }
     ],
-    schemes: ["http", "https"],
+    schemes: ["https"],
    // host: 'localhost:3000',
     basePath: '/api'
   },

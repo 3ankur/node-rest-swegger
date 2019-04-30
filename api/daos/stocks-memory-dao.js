@@ -1,4 +1,6 @@
-import Model from '../models/stock-model'
+//import Model from '../models/stock-model'
+
+
 
 export default class StocksMemoryDAO {
   constructor () {
